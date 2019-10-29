@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:08:31 by jlensing       #+#    #+#                */
-/*   Updated: 2019/10/28 15:31:47 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/10/28 19:08:05 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int sign;

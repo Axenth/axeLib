@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_memset.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 14:29:47 by jlensing       #+#    #+#                */
-/*   Updated: 2019/10/29 17:12:16 by jlensing      ########   odam.nl         */
+/*   Created: 2019/10/28 16:44:33 by jlensing       #+#    #+#                */
+/*   Updated: 2019/10/29 17:12:22 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned long i;
+	size_t			i;
+	unsigned char	*p;
 
+	p = b;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		if (str1[i] != str2[i])
-		{
-			if (str1[i] - 48 > str2[i] - 48)
-				return (1);
-			else if (str1[i] - 48 < str2[i] - 48)
-				return (-1);
-		}
+		*(p + i) = c;
 		i++;
 	}
-	return (0);
+	return (p);
 }
