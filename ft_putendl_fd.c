@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putendl_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/01 16:23:52 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/01 16:27:54 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "../hdrs/write.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
-
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	i = 0;
-	while (i < n)
-	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
-		{
-			break ;
-		}
-		i++;
-	}
-	if (tdst[i] != c)
-	{
-		return (NULL);
-	}
-	return (tdst);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

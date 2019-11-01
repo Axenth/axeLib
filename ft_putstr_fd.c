@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/01 16:07:34 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/01 16:08:52 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "../hdrs/write.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
+	int i;
 
-	tdst = (char *)dst;
-	tsrc = (char *)src;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
-		{
-			break ;
-		}
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	if (tdst[i] != c)
-	{
-		return (NULL);
-	}
-	return (tdst);
 }

@@ -6,13 +6,13 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 17:48:06 by jlensing       #+#    #+#                */
-/*   Updated: 2019/10/28 17:49:03 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/10/30 19:48:02 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 0177)
 		return (1);
 	return (0);
 }

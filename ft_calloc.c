@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_calloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/01 14:44:57 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/01 18:09:04 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <sys/errno.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*tdst;
-	char	*tsrc;
 	size_t	i;
+	char	*s;
 
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	i = 0;
-	while (i < n)
+	i = count * size;
+	s = malloc(i);
+	if (s == NULL)
 	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
-		{
-			break ;
-		}
-		i++;
-	}
-	if (tdst[i] != c)
-	{
+		errno = ENOMEM;
 		return (NULL);
 	}
-	return (tdst);
+	return (s);
 }

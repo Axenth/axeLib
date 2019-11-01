@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_memcmp.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/10/30 13:55:02 by jlensing       #+#    #+#                */
+/*   Updated: 2019/10/30 19:19:42 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
+	size_t				i;
 
-	tdst = (char *)dst;
-	tsrc = (char *)src;
+	str1 = s1;
+	str2 = s2;
 	i = 0;
 	while (i < n)
 	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
+		if (str1[i] != str2[i])
 		{
-			break ;
+			return (str1[i] - str2[i]);
 		}
 		i++;
 	}
-	if (tdst[i] != c)
-	{
-		return (NULL);
-	}
-	return (tdst);
+	return (0);
 }

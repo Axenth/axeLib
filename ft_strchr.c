@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/10/30 15:56:03 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/01 16:54:34 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
+	const char		*src;
+	unsigned long	i;
+	unsigned long	n;
 
-	tdst = (char *)dst;
-	tsrc = (char *)src;
 	i = 0;
+	n = 0;
+	src = s;
+	while (s[n] >= 001 && s[n] <= 0177)
+		n++;
+	n++;
 	while (i < n)
 	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
-		{
-			break ;
-		}
+		if (src[i] == '\0' && c != '\0')
+			return (NULL);
+		if (src[i] == c)
+			return ((char *)s + i);
 		i++;
 	}
-	if (tdst[i] != c)
-	{
-		return (NULL);
-	}
-	return (tdst);
+	return (NULL);
 }

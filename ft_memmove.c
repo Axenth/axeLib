@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 18:56:17 by jlensing       #+#    #+#                */
-/*   Updated: 2019/10/29 19:13:10 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/01 17:47:53 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,27 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*tdst;
 	char	*tsrc;
-	char	tmp[len];
-	size_t	i;
+	size_t	counter;
 
 	tdst = (char *)dst;
 	tsrc = (char *)src;
-	i = 0;
-	while (i < len)
+	counter = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst < src)
+		while (counter < len)
+		{
+			tdst[counter] = tsrc[counter];
+			counter++;
+		}
+	else
 	{
-		tmp[i] = tsrc[i];
-		i++;
-	}
-	i = 0;
-	while (i < len)
-	{
-		tdst[i] = tmp[i];
-		i++;
+		counter = len;
+		while (counter != 0)
+		{
+			tdst[counter - 1] = tsrc[counter - 1];
+			counter--;
+		}
 	}
 	return (tdst);
 }

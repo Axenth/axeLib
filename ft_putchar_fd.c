@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:10:37 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/01 16:04:07 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/01 16:04:39 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*tdst;
-	char	*tsrc;
-	size_t	i;
-
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	i = 0;
-	while (i < n)
-	{
-		tdst[i] = tsrc[i];
-		if (tdst[i] == c)
-		{
-			break ;
-		}
-		i++;
-	}
-	if (tdst[i] != c)
-	{
-		return (NULL);
-	}
-	return (tdst);
+	write(fd, &c, 1);
 }
