@@ -6,24 +6,22 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 14:44:57 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 18:09:04 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/02 13:32:20 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../hdrs/libft.h"
 #include <stdlib.h>
-#include <sys/errno.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
-	char	*s;
+	unsigned char	*ptr;
 
-	i = count * size;
-	s = malloc(i);
-	if (s == NULL)
+	ptr = malloc(size * count);
+	if (ptr == NULL)
 	{
-		errno = ENOMEM;
 		return (NULL);
 	}
-	return (s);
+	ft_bzero(ptr, size * count);
+	return (ptr);
 }
