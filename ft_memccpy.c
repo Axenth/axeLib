@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 17:39:00 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 12:52:23 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/02 15:36:03 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char	*tdst;
 	unsigned char	*tsrc;
-	size_t	i;
+	size_t			i;
 
 	tdst = (unsigned char *)dst;
 	tsrc = (unsigned char *)src;

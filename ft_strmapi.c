@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr_fd.c                                     :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/01 16:07:34 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 15:35:55 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/02 15:44:04 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/02 16:04:08 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "../hdrs/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
+	unsigned int	i;
+	char			*result;
+	int				size;
 
 	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i] != '\0')
+	if (s == NULL || f == NULL)
+		return (NULL);
+	size = ft_strlen((char *)s);
+	if ((result = malloc((size + 1) * sizeof(char))) == NULL)
+		return (NULL);
+	ft_memcpy(result, s, size);
+	while (result[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		result[i] = (*f)(i, result[i]);
 		i++;
 	}
+	result[size] = '\0';
+	return ((char *)result);
 }

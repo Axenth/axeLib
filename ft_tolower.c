@@ -6,13 +6,13 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:53:44 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 13:29:39 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/02 15:36:16 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char ch)
+int		ft_tolower(int ch)
 {
-		if (ch >= 0101 && ch <= 0132)
-			ch += 32;
-		return (ch);
+	if (ch >= 0101 && ch <= 0132)
+		ch += 32;
+	return (ch);
 }

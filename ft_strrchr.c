@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 13:09:19 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 17:13:47 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/02 15:36:32 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + n);
 		n--;
 	}
-	if(src[n] == c)
-		return((char *)s);
+	if (src[n] == c)
+		return ((char *)s);
 	return (NULL);
 }
