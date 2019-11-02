@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 19:46:31 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/02 20:46:05 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int		find_next_start(char const *s, char c, int count)
 	counter = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i] + 1 != c)
 			counter++;
 		if (counter == count)
 			return (i);
@@ -52,7 +52,7 @@ static char		*put_into_array(char const *s, int start, int end, int size)
 	char	*result;
 	int		i;
 
-	if ((result = malloc(sizeof(char *) * size)) == NULL)
+	if ((result = malloc(sizeof(char) * size)) == NULL)
 		return (NULL);
 	i = 0;
 	while (start < end)
@@ -77,14 +77,13 @@ static int	getsize(char const *s, char c, int count)
 	i2 = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && flag == 1)
+		if (s[i + 1] == c && flag == 1)
 		{
-			counter++;
-			return (counter);
+			return (counter - 1);
 		}
 		if (s[i] == c && i2 != count)
 			i2++;
-		if (s[i] == c && i2 == count)
+		if (s[i] == c && i2 == count - 1)
 			flag = 1;
 		if (flag == 1)
 			counter++;
