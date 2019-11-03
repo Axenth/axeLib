@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 20:46:05 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/03 16:06:52 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ static int	count_splits(char const *s, char c)
 	counter = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i + 1] != c)
 			counter++;
 		i++;
 	}
+	if (s[i] != c)
+		counter++;
 	return (counter);
 }
 
@@ -38,7 +40,7 @@ static int		find_next_start(char const *s, char c, int count)
 	counter = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i] + 1 != c)
+		if (s[i] == c && s[i + 1] != c)
 			counter++;
 		if (counter == count)
 			return (i);
@@ -55,6 +57,8 @@ static char		*put_into_array(char const *s, int start, int end, int size)
 	if ((result = malloc(sizeof(char) * size)) == NULL)
 		return (NULL);
 	i = 0;
+	if (start != 0)
+		start -= 1;
 	while (start < end)
 	{
 		result[i] = s[start];
@@ -96,12 +100,14 @@ char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		i;
+	int		i2;
 	int		splits;
 
 	splits = count_splits(s, c);
 	if ((result = malloc(splits * sizeof(char*))) == NULL)
 		return (NULL);
 	i = 0;
+	i2 = 0;
 	while (i < splits)
 	{
 		result[i] = put_into_array(s, find_next_start(s, c, i),
