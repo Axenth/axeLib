@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 18:03:35 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/05 18:08:30 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,44 +38,44 @@ static int		count_splits(char *str, char s)
 
 static char		*alloc(char *str, char s)
 {
-	char	*word;
+	char	*part;
 	int		i;
 
 	i = 0;
 	while (str[i] && !is_char(str[i], s))
 		i++;
-	word = (char *)malloc(sizeof(char) * (i + 1));
+	part = (char *)malloc(sizeof(char) * (i + 1));
 	i = 0;
 	while (str[i] && !is_char(str[i], s))
 	{
-		word[i] = str[i];
+		part[i] = str[i];
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	part[i] = '\0';
+	return (part);
 }
 
-char			**ft_split(char *str, char s)
+char			**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		i;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
 	if ((arr = (char **)malloc(sizeof(char *)
-										* (count_splits(str, s) + 1))) == NULL)
+								* (count_splits((char *)s, c) + 1))) == NULL)
 		return (NULL);
 	i = 0;
-	while (*str)
+	while (*s)
 	{
-		while (*str && is_char(*str, s))
-			str++;
-		if (*str && !is_char(*str, s))
+		while (*s && is_char(*s, c))
+			s++;
+		if (*s && !is_char(*s, c))
 		{
-			arr[i] = alloc(str, s);
+			arr[i] = alloc((char *)s, c);
 			i++;
-			while (*str && !is_char(*str, s))
-				str++;
+			while (*s && !is_char(*s, c))
+				s++;
 		}
 	}
 	arr[i] = NULL;

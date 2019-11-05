@@ -6,10 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 16:48:44 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 15:20:53 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/05 15:34:40 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../hdrs/libft.h"
 #include <stdlib.h>
 
 static size_t	in_set(char s, char const *set)

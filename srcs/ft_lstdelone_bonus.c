@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_lstdelone_bonus.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 18:29:28 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 17:34:25 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/05 19:09:44 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/05 20:23:58 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hdrs/libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char		*tdst;
-	char		*tsrc;
-	size_t		n;
-	size_t		n2;
-
-	if (!(tdst = (char *)ft_memchr(dst, '\0', dstsize)))
-		return (dstsize + ft_strlen((char *)src));
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	n = ft_strlen(tdst);
-	n2 = n + ft_strlen(tsrc);
-	tdst += n;
-	while (n < dstsize - 1 && *tsrc)
-	{
-		*tdst = *tsrc;
-		tdst++;
-		tsrc++;
-		n++;
-	}
-	*tdst = '\0';
-	return (n2);
+	del((lst)->content);
+	free(lst);
 }

@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_lstmap_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 18:29:28 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 17:34:25 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/05 19:34:06 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/05 20:10:01 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hdrs/libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char		*tdst;
-	char		*tsrc;
-	size_t		n;
-	size_t		n2;
+	t_list *new;
+	t_list *current;
 
-	if (!(tdst = (char *)ft_memchr(dst, '\0', dstsize)))
-		return (dstsize + ft_strlen((char *)src));
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	n = ft_strlen(tdst);
-	n2 = n + ft_strlen(tsrc);
-	tdst += n;
-	while (n < dstsize - 1 && *tsrc)
+	current = lst;
+	new = NULL;
+	while (current != NULL)
 	{
-		*tdst = *tsrc;
-		tdst++;
-		tsrc++;
-		n++;
+		new = malloc(sizeof(t_list));
+		if (f(current->content))
+		{
+			new->content = current->content;
+		}
+		else
+		{
+			del(current->content);
+			free(current);
+		}
+		new->next = NULL;
+		new = new->next;
+		current = current->next;
 	}
-	*tdst = '\0';
-	return (n2);
+	return (new);
 }

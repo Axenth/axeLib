@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_lstadd_front_bonus.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/30 18:29:28 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 17:34:25 by jlensing      ########   odam.nl         */
+/*   Created: 2019/11/05 18:19:49 by jlensing       #+#    #+#                */
+/*   Updated: 2019/11/05 20:11:21 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hdrs/libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	char		*tdst;
-	char		*tsrc;
-	size_t		n;
-	size_t		n2;
+	t_list *new_list;
 
-	if (!(tdst = (char *)ft_memchr(dst, '\0', dstsize)))
-		return (dstsize + ft_strlen((char *)src));
-	tdst = (char *)dst;
-	tsrc = (char *)src;
-	n = ft_strlen(tdst);
-	n2 = n + ft_strlen(tsrc);
-	tdst += n;
-	while (n < dstsize - 1 && *tsrc)
-	{
-		*tdst = *tsrc;
-		tdst++;
-		tsrc++;
-		n++;
-	}
-	*tdst = '\0';
-	return (n2);
+	new_list = malloc(sizeof(t_list));
+	new_list = new;
+	new_list->next = *alst;
+	*alst = new_list;
 }

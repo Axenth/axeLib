@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 13:09:19 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 15:36:32 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/05 18:46:03 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char		*src;
-	unsigned long	i;
 	unsigned long	n;
 
-	i = 0;
 	n = 0;
 	src = s;
 	while (s[n] >= 001 && s[n] <= 0177)
