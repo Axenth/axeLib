@@ -6,7 +6,7 @@
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing       #+#    #+#                 #
-#    Updated: 2019/11/02 18:06:12 by jlensing      ########   odam.nl          #
+#    Updated: 2019/11/05 19:47:39 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,13 @@ SRC_FILES = ft_strlen.c ft_atoi.c ft_tolower.c ft_isalpha.c ft_isdigit.c ft_isal
 
 SRC = $(addprefix $(SRC_MAP), $(SRC_FILES))
 
-GCC = gcc -c $(SRC) -Wall -Werror -Wextra 
+BONUS = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstclear_bonus.c
+
+BONUS_SRC = $(addprefix $(SRC_MAP), $(BONUS))
+
+
+GCC = gcc -c $(SRC) $(BONUS_SRC) -Wall -Werror -Wextra 
+GCC_BONUS = gcc -c $(SRC) $(BONUS_SRC) -Wall -Werror -Wextra 
 ARRC = ar rc libft.a ft_*.o
 
 $(NAME): all
@@ -32,6 +38,11 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f libft.a
+	rm -f *.o
+	rm -f $(NAME).a
 
 re: fclean all
+
+bonus:
+	$(GCC_BONUS)
+	rm -f *.o

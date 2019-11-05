@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 19:09:44 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 20:23:58 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/05 20:39:43 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del((lst)->content);
+	if (lst == NULL || del == NULL)
+		return ;
+	(*del)(lst->content);
 	free(lst);
 }

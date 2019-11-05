@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 18:50:56 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 20:30:22 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/05 20:38:49 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,12 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *current;
-
-	current = *alst;
-	if (new == NULL)
+	if (alst == NULL)
 		return ;
-	if (current != NULL)
+	if (*alst == NULL)
 	{
-		while (current->next != NULL)
-		{
-			current = current->next;
-		}
-		current->next = new;
+		*alst = new;
+		return ;
 	}
-	else if (current == NULL)
-	{
-		current = new;
-	}
+	ft_lstlast(*alst)->next = new;
 }
