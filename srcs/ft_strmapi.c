@@ -6,12 +6,12 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 15:44:04 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 16:04:08 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 13:57:32 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../hdrs/libft.h"
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

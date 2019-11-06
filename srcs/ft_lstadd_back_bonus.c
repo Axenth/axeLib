@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 18:50:56 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 20:38:49 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 13:55:53 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/libft.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {

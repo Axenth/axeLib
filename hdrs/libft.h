@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 15:09:04 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 20:49:55 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 19:12:00 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
-size_t				ft_strlen(char *str);
+size_t				ft_strlen(const char *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack,
@@ -60,6 +60,9 @@ void				ft_lstdelone(t_list *lst, void(*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstadd_front(t_list **alst, t_list *new);
 void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)
+												, void (*del)(void *));
 
 #endif

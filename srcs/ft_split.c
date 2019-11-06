@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 18:08:30 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 18:56:53 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static char		*alloc(char *str, char s)
 	i = 0;
 	while (str[i] && !is_char(str[i], s))
 		i++;
-	part = (char *)malloc(sizeof(char) * (i + 1));
+	if ((part = (char *)malloc(sizeof(char) * (i + 1))) == NULL)
+		return (NULL);
 	i = 0;
 	while (str[i] && !is_char(str[i], s))
 	{
@@ -53,6 +54,35 @@ static char		*alloc(char *str, char s)
 	}
 	part[i] = '\0';
 	return (part);
+}
+
+static char		**loop(char const *s, char c, char **arr)
+{
+	int i;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s && is_char(*s, c))
+			s++;
+		if (*s && !is_char(*s, c))
+		{
+			if ((arr[i] = alloc((char *)s, c)) == NULL)
+			{
+				while (i >= 0)
+				{
+					free(arr[i]);
+					i--;
+				}
+				return (NULL);
+			}
+			i++;
+			while (*s && !is_char(*s, c))
+				s++;
+		}
+	}
+	arr[i] = NULL;
+	return (arr);
 }
 
 char			**ft_split(char const *s, char c)
@@ -66,18 +96,10 @@ char			**ft_split(char const *s, char c)
 								* (count_splits((char *)s, c) + 1))) == NULL)
 		return (NULL);
 	i = 0;
-	while (*s)
+	if ((arr = loop(s, c, arr)) == NULL)
 	{
-		while (*s && is_char(*s, c))
-			s++;
-		if (*s && !is_char(*s, c))
-		{
-			arr[i] = alloc((char *)s, c);
-			i++;
-			while (*s && !is_char(*s, c))
-				s++;
-		}
+		free(arr);
+		return (NULL);
 	}
-	arr[i] = NULL;
 	return (arr);
 }

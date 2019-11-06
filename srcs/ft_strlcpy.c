@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 14:13:08 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 14:07:12 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 13:35:11 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (src == NULL)
 		return (0);
 	while (*tsrc != '\0' && tdst < tend)
-		*tdst++ = *tsrc++;
+	{
+		*tdst = *tsrc;
+		tdst++;
+		tsrc++;
+	}
 	if (tdst < tend)
 		*tdst = 0;
 	else if (dstsize > 0)

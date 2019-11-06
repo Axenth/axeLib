@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 19:34:06 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/05 20:47:50 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 13:56:45 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -20,16 +20,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	mapped = NULL;
-	while (lst != NULL)
+	tmp = f(lst);
+	mapped = tmp;
+	while (lst->next)
 	{
-		if ((tmp = ft_lstnew((*f)(lst->content))) == NULL)
+		lst = lst->next;
+		if (!(tmp->next = f(lst)))
 		{
 			ft_lstclear(&mapped, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&mapped, tmp);
-		lst = lst->next;
+		tmp = tmp->next;
 	}
 	return (mapped);
 }

@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:47:19 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 18:01:08 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/06 13:57:48 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/libft.h"
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
