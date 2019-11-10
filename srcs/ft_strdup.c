@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 15:40:18 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 16:02:43 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:11:18 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strdup(const char *s1)
 	counter = 0;
 	while (s1[size] != '\0')
 		size++;
-	if ((dup = malloc(size * sizeof(char) + 1)) == NULL)
+	dup = malloc(size * sizeof(char) + 1);
+	if (dup == NULL)
 		return (NULL);
 	while (counter < size)
 	{

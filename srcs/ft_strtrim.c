@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 16:48:44 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:57:41 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:14:32 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ static char		*cpy_string(char const *s1, size_t start, size_t end)
 
 	i = 0;
 	i2 = 0;
-	if ((trimmedstr = malloc((end - start) + 2 * sizeof(char))) == NULL)
+	trimmedstr = malloc((end - start) + 2 * sizeof(char));
+	if (trimmedstr == NULL)
 		return (NULL);
 	while (i2 < ft_strlen((char *)s1))
 	{
@@ -86,7 +87,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	end = in_range(s1, set, 1);
 	if (start == end)
 		return ("");
-	if ((trimmedstr = cpy_string(s1, start, end)) == NULL)
+	trimmedstr = cpy_string(s1, start, end);
+	if (trimmedstr == NULL)
 		return (NULL);
 	return (trimmedstr);
 }

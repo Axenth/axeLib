@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 16:11:24 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 14:00:43 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:11:44 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static char		*calc_result_strjoin(int sizestr1, int sizestr2,
 
 	i = 0;
 	flag = 0;
-	if ((result = malloc((sizestr1 + sizestr2) * sizeof(char))) == NULL)
+	result = malloc((sizestr1 + sizestr2) * sizeof(char));
+	if (result == NULL)
 		return (NULL);
 	while ((i < sizestr1 && flag == 0) || (i < sizestr2 && flag == 1))
 	{

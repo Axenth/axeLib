@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 14:09:27 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:56:08 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:09:56 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static char		*calc_result(int n, int amount)
 	int		i;
 	char	*result;
 
-	if ((result = malloc(amount * sizeof(char) + 1)) == NULL)
+	result = malloc(amount * sizeof(char) + 1);
+	if (result == NULL)
 		return (NULL);
 	i = amount - 1;
 	while (i >= 0)
@@ -77,7 +78,8 @@ char			*ft_itoa(int n)
 	temp = isnegative(temp);
 	amount = count_amount(temp);
 	n = isnegative(n);
-	if ((result = calc_result(n, amount)) == NULL)
+	result = calc_result(n, amount);
+	if (result == NULL)
 		return (NULL);
 	result[amount] = '\0';
 	if (sign)

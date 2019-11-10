@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 18:29:28 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:57:21 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:12:55 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t		n;
 	size_t		n2;
 
-	if (!(tdst = (char *)ft_memchr(dst, '\0', dstsize)))
+	tdst = (char *)ft_memchr(dst, '\0', dstsize);
+	if (!tdst)
 		return (dstsize + ft_strlen((char *)src));
 	tdst = (char *)dst;
 	tsrc = (char *)src;

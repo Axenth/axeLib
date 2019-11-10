@@ -6,11 +6,26 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:08:31 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/01 14:42:04 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/10 16:42:28 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+static int	skip(const char *str, int i)
+{
+	while (str[i] == '\t' || str[i] == '\b' || str[i] == ' ' || str[i] == '\v'
+			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\f')
+		i++;
+	return (i);
+}
+
+static int	is_negative(const char *str, int i)
+{
+	if (str[i] == '-')
+		return (-1);
+	return (1);
+}
+
+int			ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;
@@ -18,15 +33,15 @@ int		ft_atoi(const char *str)
 	long		max;
 
 	max = 9223372036854775807;
-	sign = 1;
 	result = 0;
-	i = 0;
-	while (str[i] == '\t' || str[i] == '\b' || str[i] == ' ' || str[i] == '\v'
-			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\f')
+	i = skip(str, 0);
+	sign = is_negative(str, i);
+	if (sign == -1)
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '+')
 	{
-		sign = -1;
+		if (sign == -1)
+			return (0);
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
