@@ -6,13 +6,13 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 12:49:40 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/02 13:52:54 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/15 14:04:29 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int ch)
+int	ft_toupper(int c)
 {
-	if (ch >= 97 && ch <= 122)
-		ch -= 32;
-	return (ch);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 16:48:44 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/08 14:14:32 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/15 14:02:18 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	start = in_range(s1, set, 0);
 	end = in_range(s1, set, 1);
 	if (start == end)
-		return ("");
+		return (ft_strdup(""));
 	trimmedstr = cpy_string(s1, start, end);
 	if (trimmedstr == NULL)
 		return (NULL);

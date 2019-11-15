@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 15:44:04 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/08 14:13:43 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/13 13:48:18 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*result;
-	int				size;
+	char			*str;
 
 	i = 0;
-	if (s == NULL || f == NULL)
+	if (!s || !f)
 		return (NULL);
-	size = ft_strlen((char *)s);
-	result = malloc((size + 1) * sizeof(char));
-	if (result == NULL)
+	str = ft_strdup(s);
+	if (!str)
 		return (NULL);
-	ft_memcpy(result, s, size);
-	while (result[i])
+	while (s[i])
 	{
-		result[i] = (*f)(i, result[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
-	result[size] = '\0';
-	return ((char *)result);
+	return (str);
 }

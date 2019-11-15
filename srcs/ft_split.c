@@ -6,100 +6,96 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/08 13:58:37 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/15 14:11:44 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static int		is_char(char c, char s)
+static int		calc(const char *s, int c)
 {
-	return (c == s);
-}
-
-static int		splits(char *str, char s)
-{
-	int	counter;
-
-	counter = 0;
-	while (*str)
-	{
-		while (*str && is_char(*str, s))
-			str++;
-		if (*str && !is_char(*str, s))
-		{
-			counter++;
-			while (*str && !is_char(*str, s))
-				str++;
-		}
-	}
-	return (counter);
-}
-
-static char		*alloc(char *str, char s)
-{
-	char	*word;
 	int		i;
+	size_t	count;
 
+	count = 0;
 	i = 0;
-	while (str[i] && !is_char(str[i], s))
-		i++;
-	word = (char *)malloc(sizeof(char) * (i + 1));
-	if (word == NULL)
-		return (NULL);
-	i = 0;
-	while (str[i] && !is_char(str[i], s))
+	while (s[i] != '\0')
 	{
-		word[i] = str[i];
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			count++;
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	if (count == 1)
+		return (1);
+	return (count + 1);
 }
 
-static char		**loop(char const *s, char c, char **arr, int i)
+static char		*get_next_str(char const **s, char c)
 {
-	while (*s)
+	size_t	i;
+	size_t	i2;
+	char	*str;
+	char	*ret;
+
+	str = (char*)*s;
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	i2 = 0;
+	ret = malloc(sizeof(char) * i + 1);
+	if (!ret)
+		return (NULL);
+	while (i2 < i)
 	{
-		while (*s && is_char(*s, c))
-			s++;
-		if (*s && !is_char(*s, c))
-		{
-			arr[i] = alloc((char *)s, c);
-			if (arr == NULL)
-			{
-				while (i >= 0)
-				{
-					free(arr[i]);
-					i--;
-				}
-				return (NULL);
-			}
-			i++;
-			while (*s && !is_char(*s, c))
-				s++;
-		}
+		ret[i2] = *str;
+		str++;
+		i2++;
 	}
-	arr[i] = NULL;
-	return (arr);
+	ret[i2] = '\0';
+	while (*str && *str == c)
+		str++;
+	*s = str;
+	return (ret);
+}
+
+static void		clean_mem(char ***cln)
+{
+	size_t	i;
+
+	i = 0;
+	while ((*cln)[i])
+	{
+		free((*cln)[i]);
+		i++;
+	}
+	free(*cln);
 }
 
 char			**ft_split(char const *s, char c)
 {
 	char	**arr;
-	int		i;
+	size_t	i;
+	size_t	i2;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	arr = (char **)malloc(sizeof(char *) * splits((char *)s, c) + 1);
-	if (arr == NULL)
+	while (*s == c && *s)
+		s++;
+	i2 = 0;
+	i = calc(s, c);
+	arr = malloc(sizeof(char*) * (i + 1));
+	if (!arr)
 		return (NULL);
-	i = 0;
-	arr = loop(s, c, arr, 0);
-	if (arr == NULL)
+	while (i2 < i && *s)
 	{
-		free(arr);
-		return (NULL);
+		arr[i2] = get_next_str(&s, c);
+		if (arr[i2] == NULL)
+		{
+			clean_mem(&arr);
+			return (NULL);
+		}
+		i2++;
 	}
+	arr[i2] = (char*)NULL;
 	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 16:27:55 by jlensing       #+#    #+#                */
-/*   Updated: 2019/10/29 17:12:04 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/15 13:49:42 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*p;
+	size_t	i;
+	char	*p;
 
-	p = s;
+	p = (char *)s;
 	i = 0;
 	while (i < n)
 	{

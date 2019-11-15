@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 14:09:27 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/08 14:09:56 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/15 18:09:01 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,14 @@ static int		isnegative(int n)
 	return (n);
 }
 
-static int		count_amount(int temp)
+static int		count_amount(int temp, int sign)
 {
 	int amount;
 
-	amount = 1;
+	if (sign)
+		amount = 1;
+	if (!sign)
+		amount = 0;
 	while (temp > 0)
 	{
 		temp /= 10;
@@ -76,9 +79,8 @@ char			*ft_itoa(int n)
 	if (n < 0)
 		sign = 1;
 	temp = isnegative(temp);
-	amount = count_amount(temp);
-	n = isnegative(n);
-	result = calc_result(n, amount);
+	amount = count_amount(temp, sign);
+	result = calc_result(temp, amount);
 	if (result == NULL)
 		return (NULL);
 	result[amount] = '\0';
@@ -87,5 +89,5 @@ char			*ft_itoa(int n)
 		result[0] = '-';
 		return (result);
 	}
-	return (result + 1);
+	return (result);
 }
