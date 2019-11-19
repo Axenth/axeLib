@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 14:09:27 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/15 18:09:01 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/17 11:33:58 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ char			*ft_itoa(int n)
 	if (sign)
 	{
 		result[0] = '-';
-		return (result);
 	}
 	return (result);
 }

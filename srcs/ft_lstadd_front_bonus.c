@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 18:19:49 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:56:18 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/17 11:35:25 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list *new_list;
-
-	new_list = malloc(sizeof(t_list));
-	new_list = new;
-	new_list->next = *alst;
-	*alst = new_list;
+	if (alst == NULL || new == NULL)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstlast_bonus.c                                 :+:    :+:            */
+/*   ft_lstlast_bonbus.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 18:37:14 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:56:39 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/19 16:49:36 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *current;
-
-	current = lst;
-	if (current == NULL)
+	if (lst == NULL)
 		return (NULL);
-	while (current->next != NULL)
-		current = current->next;
-	return (current);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

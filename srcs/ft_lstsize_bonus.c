@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 18:21:22 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:56:54 by jlensing      ########   odam.nl         */
+/*   Updated: 2019/11/17 11:39:13 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_list	*current;
 
-	current = lst;
 	i = 0;
-	while (current != NULL)
+	while (lst != NULL)
 	{
-		current = current->next;
 		i++;
+		lst = lst->next;
 	}
 	return (i);
 }
