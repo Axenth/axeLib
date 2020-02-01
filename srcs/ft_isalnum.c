@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 17:15:47 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/15 14:06:39 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/02/01 14:20:36 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../hdrs/libft.h"
 
 int		ft_isalnum(int c)
 {

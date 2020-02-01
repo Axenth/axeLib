@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 15:09:04 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/15 14:05:41 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/02/01 14:14:50 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *)
 												, void (*del)(void *));
+int					ft_printf(const char *format, ...);
+int					get_next_line(int fd, char **line);
 
 #endif

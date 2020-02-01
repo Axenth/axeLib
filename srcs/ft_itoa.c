@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 14:09:27 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/17 11:33:58 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/02/01 14:20:36 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../hdrs/libft.h"
 #include <stdlib.h>
 
 static int		isnegative(int n)

@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 16:11:24 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/13 13:52:46 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/02/01 14:20:36 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../hdrs/libft.h"
 #include <stdlib.h>
 
 char			*ft_strjoin(char const *s1, char const *s2)

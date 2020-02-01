@@ -6,20 +6,18 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 17:47:19 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/15 14:18:48 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/02/01 14:20:36 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../hdrs/libft.h"
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	s_len;
 	char	*result;
 
-	i = 0;
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);

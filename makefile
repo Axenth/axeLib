@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    makefile                                           :+:    :+:             #
 #                                                      +:+                     #
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing       #+#    #+#                 #
-#    Updated: 2019/11/17 11:40:38 by jlensing      ########   odam.nl          #
+#    Updated: 2020/02/01 14:19:57 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,45 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c\
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
 		ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstclear_bonus.c
 
-OBJ := $(SRC:.c=.o)
-BONUS_OBJ := $(BONUS_SRC:.c=.o)
+PRINTF_SRC = ft_printf.c flag_checker.c flag_handler.c in_set.c in_flag_set.c \
+		handle_precision.c handle_width.c handle_negative.c \
+		flag_handler_sub_1.c flag_handler_sub_2.c flag_handler_sub_3.c
+
+PRINTF_SRC_MAP = printf/srcs/
+
+PRINTF_UTIL_SRC = ft_putchar_fd.c ft_putstr_fd.c ft_tolower.c \
+ 			ft_convert_to_hex.c ft_strdup.c ft_strlen.c ft_toupper.c \
+			ft_itoa.c ft_atoi.c ft_substr.c ft_strncmp.c ft_strlcat.c \
+		 	ft_strlcpy.c ft_itoa_unsigned.c ft_strjoin.c
+
+PRINTF_UTIL_MAP = printf/utils/
+
+PRINTF_FLG = flag_c.c flag_p.c flag_s.c flag_di.c flag_u.c flag_x.c flag_procent.c \
+		flag_width.c
+
+PRINTF_FLG_MAP = printf/flags/
+
+GNL_SRC = get_next_line_utils.c get_next_line.c
+
+GNL_MAP = get_next_line/
+
+SRC_MAP = srcs/
+
+GNL_SRCS = $(addprefix $(GNL_MAP), $(GNL_SRC))
+
+PRINTF_SRCS = $(addprefix $(PRINTF_SRC_MAP), $(PRINTF_SRC))
+
+PRINTF_UTILS = $(addprefix $(PRINTF_UTIL_MAP), $(PRINTF_UTIL_SRC))
+
+PRINTF_FLGS = $(addprefix $(PRINTF_FLG_MAP), $(PRINTF_FLG))
+
+SRCS = $(addprefix $(SRC_MAP), $(SRC))
+
+BONUS_SRCS = $(addprefix $(SRC_MAP), $(BONUS_SRC))
+
+OBJ := $(SRCS:.c=.o) $(PRINTF_SRCS:.c=.o) $(PRINTF_UTILS:.c=.o) $(PRINTF_FLGS:.c=.o) \
+	   $(GNL_SRCS:.c=.o)
+BONUS_OBJ := $(BONUS_SRCS:.c=.o)
 
 ifeq ($(BONUS), yes)
 OBJS  = $(OBJ) $(BONUS_OBJ)
@@ -32,17 +69,17 @@ else
 OBJS=$(OBJ)
 endif
 
-HDR = libft.h
+HDR = -I hdrs 
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -fPIC
 
-all: $(NAME)
+all: $(NAME) 
 
 $(NAME): $(OBJS)
 	$(AR) rcs $@ $^
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(FLAGS)
+	clang -o $@ -c $< $(FLAGS) 
 
 clean:
 	$(RM) $(OBJ) $(BONUS_OBJ)
