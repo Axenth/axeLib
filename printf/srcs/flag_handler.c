@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/20 16:39:52 by jlensing       #+#    #+#                */
-/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:51:56 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static struct s_info	handle_functions(struct s_info info, char *str,
 	width_true(info, str, 0);
 	if (info.negative_flag == e_true)
 	{
-		info = ft_putchar_fd(1, '-', info);
+		info = ft_putchar_fd_util(1, '-', info);
 		info.amount += 1;
 	}
 	width_zero_true(info, str, 0);

@@ -6,13 +6,13 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 14:13:08 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/06 13:35:11 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:55:00 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy_util(char *dst, const char *src, size_t dstsize)
 {
 	char		*tdst;
 	char		*tend;

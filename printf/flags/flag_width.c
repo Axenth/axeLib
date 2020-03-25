@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/22 15:44:19 by jlensing       #+#    #+#                */
-/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:50:00 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ struct s_width	flag_width(const char *str, int position, struct s_width info)
 		i++;
 	}
 	result[i] = '\0';
-	info.width = ft_atoi(result);
+	info.width = ft_atoi_util(result);
 	info.pos = end + 1;
 	free(result);
 	return (info);

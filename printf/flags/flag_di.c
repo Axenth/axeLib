@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/20 21:18:57 by jlensing       #+#    #+#                */
-/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:51:29 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ char	*flag_di(signed int value)
 
 	if (value < 0)
 		value *= -1;
-	str = ft_itoa(value);
+	str = ft_itoa_util(value);
 	return (str);
 }

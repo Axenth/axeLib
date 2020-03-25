@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/22 14:36:18 by jlensing       #+#    #+#                */
-/*   Updated: 2019/12/17 19:21:00 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:55:38 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(const char *str)
+int		ft_strlen_util(const char *str)
 {
 	int i;
 

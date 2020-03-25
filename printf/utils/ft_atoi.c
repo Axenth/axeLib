@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:08:31 by jlensing       #+#    #+#                */
-/*   Updated: 2019/11/12 17:14:09 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:50:40 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	skip(const char *str, int i)
 	return (i);
 }
 
-int			ft_atoi(const char *str)
+int			ft_atoi_util(const char *str)
 {
 	int				i;
 	int				sign;

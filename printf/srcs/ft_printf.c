@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/20 16:08:18 by jlensing       #+#    #+#                */
-/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 21:51:56 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int							ft_printf(const char *format, ...)
 		}
 		else if (format[i] != '%')
 		{
-			info = ft_putchar_fd(1, format[i], info);
+			info = ft_putchar_fd_util(1, format[i], info);
 			info.amount++;
 		}
 		if (info.error == e_true)

@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/22 14:22:13 by jlensing       #+#    #+#                */
-/*   Updated: 2020/03/25 21:55:15 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 22:15:05 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../hdrs/utils.h"
+#include "../hdrs/libft.h"
 #include <stdlib.h>
 
 static char	*reverse(char *hex)
@@ -20,8 +20,8 @@ static char	*reverse(char *hex)
 	int		j;
 
 	j = 0;
-	i = ft_strlen_util(hex) - 1;
-	result = malloc(sizeof(char) * ft_strlen_util(hex) + 1);
+	i = ft_strlen(hex) - 1;
+	result = malloc(sizeof(char) * ft_strlen(hex) + 1);
 	if (result == NULL)
 		return (NULL);
 	while (i >= 0)
@@ -44,14 +44,14 @@ static char	*cleanup(int i, char *hex)
 	if (i < 12)
 	{
 		hex[i] = '\0';
-		result = ft_strdup_util(hex);
+		result = ft_strdup(hex);
 		free(hex);
 		return (result);
 	}
 	return (hex);
 }
 
-char		*convert_to_hex_util(unsigned long value)
+char		*ft_convert_to_hex(unsigned long value)
 {
 	char	*hex;
 	long	leftover;

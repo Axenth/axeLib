@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 15:09:04 by jlensing       #+#    #+#                */
-/*   Updated: 2020/02/01 14:14:50 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/03/25 22:14:53 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t count, size_t size);
+char				*ft_convert_to_hex(unsigned long value);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);

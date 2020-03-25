@@ -8,6 +8,7 @@ ft_atoi<br/>
 ft_itoa<br/>
 ft_bzero<br/>
 ft_calloc<br/>
+ft_convert_to_hex<br/>
 ft_isalnum<br/>
 ft_isalpha<br/>
 ft_isascii<br/>
@@ -191,6 +192,12 @@ void				*ft_calloc(size_t count, size_t size);
 ```
 Description - The ft_calloc() function allocates memory for an array of count elements of size bytes each and returns a pointer to the allocated memory. The memory is set to zero. <br/>
 Return - The ft_calloc() function returns a pointer to the allocated memory. If the memory allocation fails or the memory cannot be set to zero than NULL is returned.<br/>
+
+```
+char				*ft_convert_to_hex(unsigned long value);
+```
+Description - The ft_convert_to_hex() function takes in a unsigned long and converts this value to its hexadecimal counter-part. <br/>
+Return - The ft_convert_to_hex() function returns a pointer to the hexadecimal string. It returns NULL if insufficient memory was available.<br/>
 
 ```
 char				*ft_strdup(const char *s1);
