@@ -1,3 +1,7 @@
+## V2.2
+* Renamed some of the src files
+* Bonus files are no longer considered bonus and have been intergrated into the main libft
+
 ## V2.1
 * Fixed a bug where ft_printf wasn't working on all systems.
 * Utility functions in ft_printf were all suffixed with _utils to prevent duplicate symbols in the library.
