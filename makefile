@@ -6,7 +6,7 @@
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing       #+#    #+#                 #
-#    Updated: 2020/02/01 14:19:57 by jlensing      ########   odam.nl          #
+#    Updated: 2020/03/26 20:53:05 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,9 @@ SRC = ft_strlen.c ft_atoi.c ft_tolower.c ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strchr.c\
 	ft_strlcpy.c ft_strlcat.c ft_strrchr.c ft_strnstr.c ft_calloc.c ft_strdup.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_strtrim.c\
-	ft_itoa.c ft_strmapi.c ft_strjoin.c ft_substr.c ft_split.c
-
-BONUS_SRC = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c\
-		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
-		ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstclear_bonus.c
+	ft_itoa.c ft_strmapi.c ft_strjoin.c ft_substr.c ft_split.c ft_lstnew.c\
+	ft_lstsize.c ft_lstadd_front.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+	ft_lstiter.c ft_lstmap.c ft_lstclear.c
 
 PRINTF_SRC = ft_printf.c flag_checker.c flag_handler.c in_set.c in_flag_set.c \
 		handle_precision.c handle_width.c handle_negative.c \
@@ -57,17 +55,8 @@ PRINTF_FLGS = $(addprefix $(PRINTF_FLG_MAP), $(PRINTF_FLG))
 
 SRCS = $(addprefix $(SRC_MAP), $(SRC))
 
-BONUS_SRCS = $(addprefix $(SRC_MAP), $(BONUS_SRC))
-
 OBJ := $(SRCS:.c=.o) $(PRINTF_SRCS:.c=.o) $(PRINTF_UTILS:.c=.o) $(PRINTF_FLGS:.c=.o) \
 	   $(GNL_SRCS:.c=.o)
-BONUS_OBJ := $(BONUS_SRCS:.c=.o)
-
-ifeq ($(BONUS), yes)
-OBJS  = $(OBJ) $(BONUS_OBJ)
-else
-OBJS=$(OBJ)
-endif
 
 HDR = -I hdrs 
 
@@ -88,6 +77,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-bonus:
-	$(MAKE) BONUS=yes
