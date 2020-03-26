@@ -64,14 +64,14 @@ FLAGS = -Wall -Werror -Wextra -fPIC
 
 all: $(NAME) 
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJ)
 	$(AR) rcs $@ $^
 
 %.o: %.c
 	clang -o $@ -c $< $(FLAGS) 
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)

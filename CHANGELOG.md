@@ -1,3 +1,6 @@
+## V2.2.1
+* Fixed makefile using OBJS instead of OBJ
+
 ## V2.2
 * Renamed some of the src files
 * Bonus files are no longer considered bonus and have been intergrated into the main libft
