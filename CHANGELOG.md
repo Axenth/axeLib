@@ -1,3 +1,6 @@
+## V3.0.1
+* Updated documentation.
+
 ## V3.0
 * Started adding math functions to extend the use of libft.
 * Added ft_abs.

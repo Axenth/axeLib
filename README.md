@@ -50,13 +50,11 @@ ft_lstsize<br/>
 ft_lstmap<br/>
 ft_printf<br/>
 get_next_line<br/>
-<!--
 ft_sqrt<br/>
 ft_pow<br/>
 ft_abs<br/>
 ft_floor<br/>
 ft_ceil<br/>
--->
 
 ## Usage of each Function
 
@@ -98,7 +96,7 @@ Description - The ft_memchr() function scans the initial n bytes of the memory a
 Return - The ft_memchr() function returns a pointer to the matching byte or NULL if the character does not occur in the given memory area.<br/>
 
 ```
-int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
 ```
 Description - The ft_memcmp() function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2.<br/>
 Return - The ft_memcmp() function returns an integer less than, equal to, or greater than zero if the first n bytes of s1 is found, respectively, to be less than, to match, or be greater than the first n bytes of s2. For a nonzero return value, the sign is determined by the sign of the difference between the first pair of bytes (interpreted as unsigned char) that differ in s1 and s2. If n is zero, the return value is zero.<br/>
@@ -141,43 +139,43 @@ Description - The ft_strnstr() function locates the first occurence of the NULL-
 Return - If Needle is an empty string, Haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first character of the first occurence of needle is returned.<br/>
 
 ```
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 ```
 Description - The ft_strncmp() function compares the two strings s1 and s2. It returns an integer less than, equal to, or greater than zero if s1 is found, respectively, to be less then, to match, or be greater than s2. It only compares at most n bytes of s1 and s2.<br/>
 Return - The ft_strncmp() function returns an integer less than, equal to, or greater than zero if s1 (or the first n bytes thereof) is found, respectively, to be less than, to match, or be greater than s2.<br/>
 
 ```
-int					ft_atoi(const char *str);
+int				ft_atoi(const char *str);
 ```
 Description - The ft_atoi() function converts the initial portion of the string pointed to by str to int.<br/>
 Return - The converted value.<br/>
 
 ```
-int					ft_isalpha(int c);
+int				ft_isalpha(int c);
 ```
 Description - The ft_isalpha() function checks wether or not c is an alphabetic character based on the ASCII Table.<br/>
 Return - 1 for true; 0 for false.<br/>
 
 ```
-int					ft_isdigit(int c);
+int				ft_isdigit(int c);
 ```
 Description - The ft_isdigit() function check wether or not c is a digit based on the ASCII Table.<br/>
 Return - 1 for true; 0 for false.<br/>
 
 ```
-int					ft_isalnum(int c);
+int				ft_isalnum(int c);
 ```
 Description - The ft_isalnum() function checks wether or not c is a alphabetic character or an digit based on the ASCII Table.<br/>
 Return - 1 for true; 0 for false.<br/>
 
 ```
-int					ft_isascii(int c);
+int				ft_isascii(int c);
 ```
 Description - The ft_isascii() function check wether or not c is a character based on the ASCII table.<br/>
 Return - 1 for true; 0 for false.<br/>
 
 ```
-int					ft_isprint(int c);
+int				ft_isprint(int c);
 ```
 Description - The ft_isprint() function checks wether or not c is a printable character based on the ASCII Table.<br/>
 Return - 1 for true; 0 for false.<br/>
@@ -285,7 +283,7 @@ Description - The ft_lstadd_front() function adds the element new at the beginni
 Return - None.<br/>
 
 ```
-int					ft_lstsize(t_list *lst);
+int				ft_lstsize(t_list *lst);
 ```
 Description - The ft_lstsize() function counts the number of elements in a list.<br/>
 Return - The ft_lstsize() function returns the length of the list.<br/>
@@ -327,13 +325,13 @@ Description - The ft_lstmap() function Iterates the list lst and applies the fun
 Return - The ft_lstmap() function returns the newly created list. Null if the allocation Fails.<br/>
 
 ```
-int					ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 ```
 Description - The ft_printf() function replicates the behaviour of printf for the conversions: c s p d i u x X % and the flags: - 0 . * as well as minimum field width.<br/>
 Return - The ft_printf() function returns the amount of characters printed.<br/>
 
 ```
-int					get_next_line(int fd, char **line);
+int				get_next_line(int fd, char **line);
 ```
 Description - The get_next_line() function reads a line from the file descriptor fd and returns the next line found.<br/>
 Return - The get_next_line() function returns the next line from a file descriptor.<br/>
@@ -351,7 +349,7 @@ Description - The ft_pow() function calculates the value of x to the power of y.
 Return - The ft_pow() function returns x^y. <br/>
 
 ```
-int					ft_abs(int i);
+int				ft_abs(int i);
 ```
 Description - The ft_abs() function calculates the absolute value of i. <br/>
 Return - The ft_abs() function returns the absolute value of i. <br/>
