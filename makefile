@@ -6,7 +6,7 @@
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing       #+#    #+#                 #
-#    Updated: 2020/03/26 20:53:05 by jlensing      ########   odam.nl          #
+#    Updated: 2020/03/27 22:25:24 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,13 @@ GNL_SRC = get_next_line_utils.c get_next_line.c
 
 GNL_MAP = get_next_line/
 
+MATH_SRC = ft_sqrt.c ft_pow.c ft_abs.c ft_floor.c ft_ceil.c ft_fabs.c
+
+MATH_MAP = math/
+
 SRC_MAP = srcs/
+
+MATH_SRCS = $(addprefix $(MATH_MAP), $(MATH_SRC))
 
 GNL_SRCS = $(addprefix $(GNL_MAP), $(GNL_SRC))
 
@@ -56,7 +62,7 @@ PRINTF_FLGS = $(addprefix $(PRINTF_FLG_MAP), $(PRINTF_FLG))
 SRCS = $(addprefix $(SRC_MAP), $(SRC))
 
 OBJ := $(SRCS:.c=.o) $(PRINTF_SRCS:.c=.o) $(PRINTF_UTILS:.c=.o) $(PRINTF_FLGS:.c=.o) \
-	   $(GNL_SRCS:.c=.o)
+	   $(GNL_SRCS:.c=.o) $(MATH_SRCS:.c=.o)
 
 HDR = -I hdrs 
 

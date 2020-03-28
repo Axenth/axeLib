@@ -1,6 +1,6 @@
 # AxeLib
 
-A simple library i use during the 42 program at CODAM
+A simple library I use during the 42 program at CODAM
 
 ## Functions
 
@@ -50,6 +50,13 @@ ft_lstsize<br/>
 ft_lstmap<br/>
 ft_printf<br/>
 get_next_line<br/>
+<!--
+ft_sqrt<br/>
+ft_pow<br/>
+ft_abs<br/>
+ft_floor<br/>
+ft_ceil<br/>
+-->
 
 ## Usage of each Function
 
@@ -331,6 +338,42 @@ int					get_next_line(int fd, char **line);
 Description - The get_next_line() function reads a line from the file descriptor fd and returns the next line found.<br/>
 Return - The get_next_line() function returns the next line from a file descriptor.<br/>
 
+```
+double				ft_sqrt(double x);
+```
+Description - The ft_sqrt() function takes in a double x and calculates the square root value. <br/>
+Return - The ft_sqrt() function returns the square root of x. <br/>
+
+```
+double				ft_pow(double x, double y);
+````
+Description - The ft_pow() function calculates the value of x to the power of y. <br/>
+Return - The ft_pow() function returns x^y. <br/>
+
+```
+int					ft_abs(int i);
+```
+Description - The ft_abs() function calculates the absolute value of i. <br/>
+Return - The ft_abs() function returns the absolute value of i. <br/>
+
+```
+double				ft_fabs(double x);
+```
+Description - The ft_fabs() function calculates the absolute value of x. <br/>
+Return - The ft_fabs() function returns the absolute value of x. <br/>
+
+```
+double				ft_floor(double x);
+```
+Description - The ft_floor() function calculates the largest integer possible that is equal to or lesser then x. <br/>
+Return - The ft_floor() function returns the largest interger equal or lesser then x. <br/>
+
+```
+double				ft_ceil(double x);
+```
+Description - The ft_floor() function caluclates the largest integer possible that is equal to or greater then x. <br/>
+Return - The ft_ceil() function returns the largest interger equal or greater then x. It returns x in the case of an error. <br/>
+
 ## Compiling
 
 To compile the library simply call the makefile
@@ -341,10 +384,11 @@ make all
 
 ## Usage
 
-Include the header libft.h in your .c file
+Include the desired header in your .c file
 
 ```
 #include <libft.h>
+#include <libftmath.h>
 ```
 
 and compile with the library and the path to the header
