@@ -6,11 +6,11 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/27 01:13:53 by jlensing       #+#    #+#                */
-/*   Updated: 2020/03/27 22:25:28 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/04/05 20:07:18 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_abs(int i)
 {
-	return ((i<0) ? (-i) : (i));
+	return ((i < 0) ? (-i) : (i));
 }

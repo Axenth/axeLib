@@ -6,7 +6,7 @@
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing       #+#    #+#                 #
-#    Updated: 2020/03/27 22:25:24 by jlensing      ########   odam.nl          #
+#    Updated: 2020/04/05 20:12:38 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ PRINTF_UTIL_SRC = ft_putchar_fd.c ft_putstr_fd.c ft_tolower.c \
 
 PRINTF_UTIL_MAP = printf/utils/
 
-PRINTF_FLG = flag_c.c flag_p.c flag_s.c flag_di.c flag_u.c flag_x.c flag_procent.c \
-		flag_width.c
+PRINTF_FLG = flag_c.c flag_p.c flag_s.c flag_di.c flag_u.c flag_x.c \
+				flag_procent.c flag_width.c
 
 PRINTF_FLG_MAP = printf/flags/
 
@@ -61,8 +61,8 @@ PRINTF_FLGS = $(addprefix $(PRINTF_FLG_MAP), $(PRINTF_FLG))
 
 SRCS = $(addprefix $(SRC_MAP), $(SRC))
 
-OBJ := $(SRCS:.c=.o) $(PRINTF_SRCS:.c=.o) $(PRINTF_UTILS:.c=.o) $(PRINTF_FLGS:.c=.o) \
-	   $(GNL_SRCS:.c=.o) $(MATH_SRCS:.c=.o)
+OBJ := $(SRCS:.c=.o) $(PRINTF_SRCS:.c=.o) $(PRINTF_UTILS:.c=.o) \
+		$(PRINTF_FLGS:.c=.o) $(GNL_SRCS:.c=.o) $(MATH_SRCS:.c=.o)
 
 HDR = -I hdrs 
 

@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 18:45:55 by jlensing       #+#    #+#                */
-/*   Updated: 2020/02/01 14:23:53 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/04/05 20:09:38 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int			get_next_line(int fd, char **line)
 	char		*temp;
 
 	temp = gnl_ft_strdup("", NULL, 0);
-	if (fd < 0 ||  !line || BUFFER_SIZE < 1 || temp == NULL)
+	if (fd < 0 || !line || BUFFER_SIZE < 1 || temp == NULL)
 	{
 		if (temp)
 			free(temp);
@@ -111,7 +111,7 @@ int			get_next_line(int fd, char **line)
 	}
 	ret = get_next_line_loop(fd, line, temp, 1);
 	if (ret == -1)
-		if(temp != NULL)
+		if (temp != NULL)
 			free(temp);
 	return (ret);
 }

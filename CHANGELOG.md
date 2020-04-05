@@ -1,3 +1,7 @@
+## V3.0.2
+* Changed some files to pass the 42 norm test.
+* removed ft_strrmchr.
+
 ## V3.0.1
 * Updated documentation.
 
