@@ -32,6 +32,7 @@ ft_strdup<br/>
 ft_strmapi<br/>
 ft_strjoin<br/>
 ft_strtrim<br/>
+ft_strcontains<br/>
 ft_split<br/>
 ft_tolower<br/>
 ft_toupper<br/>
@@ -227,6 +228,12 @@ char				*ft_strtrim(char const *s1, char const *set);
 ```
 Description - The ft_strtrim() function allocates and returns a copy of s1 with the characters specified in set removed from the beginning and end of the string.<br/>
 Return - The ft_strtrim() function returns a copy of s1 with the sets removed from the beginning and end.<br/>
+
+```
+int					ft_strcontains(char *str, char *set);
+```
+Description - The ft_strcontains() functions checks to see if the set of characters is present within the string <br/>
+Return - The ft_strcontains() functions returns 1 if the set is present 0 if its not present and -1 if there is an error <br/>
 
 ```
 char				**ft_split(char const *s, char c);

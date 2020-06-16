@@ -6,7 +6,7 @@
 #    By: jlensing <jlensing@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/28 12:23:24 by jlensing      #+#    #+#                  #
-#    Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl          #
+#    Updated: 2020/06/16 15:07:57 by jlensing      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = ft_strlen.c ft_atoi.c ft_tolower.c ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_strtrim.c\
 	ft_itoa.c ft_strmapi.c ft_strjoin.c ft_substr.c ft_split.c ft_lstnew.c\
 	ft_lstsize.c ft_lstadd_front.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
-	ft_lstiter.c ft_lstmap.c ft_lstclear.c
+	ft_lstiter.c ft_lstmap.c ft_lstclear.c ft_contains.c
 
 PRINTF_SRC = ft_printf.c flag_checker.c flag_handler.c in_set.c in_flag_set.c \
 		handle_precision.c handle_width.c handle_negative.c \

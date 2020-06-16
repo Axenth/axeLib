@@ -1,5 +1,8 @@
+## V3.0.4
+* Added ft_strcontains.
+
 ## V3.0.3
-* fixed header at top of files
+* fixed header at top of files.
 
 ## V3.0.2
 * Changed some files to pass the 42 norm test.

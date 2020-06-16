@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 15:09:04 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/06/16 15:07:48 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char				*ft_strdup(const char *s1);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
+int					ft_strcontains(char *str, char *set);
 char				**ft_split(char const *s, char c);
 char				ft_tolower(char c);
 char				ft_toupper(char c);
