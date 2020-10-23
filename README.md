@@ -50,6 +50,7 @@ ft_lstiter<br/>
 ft_lstsize<br/>
 ft_lstmap<br/>
 ft_printf<br/>
+ft_fprintf<br/>
 get_next_line<br/>
 ft_sqrt<br/>
 ft_pow<br/>
@@ -336,6 +337,12 @@ int				ft_printf(const char *format, ...);
 ```
 Description - The ft_printf() function replicates the behaviour of printf for the conversions: c s p d i u x X % and the flags: - 0 . * as well as minimum field width.<br/>
 Return - The ft_printf() function returns the amount of characters printed.<br/>
+
+```
+int				ft_fprintf(int fd, const char *format, ...);
+```
+Description - The ft_fprintf() function replicates the behaviour of fprintf for the conversions: c s p d i u x X % and the flags: - 0 . * as well as minimum field width.<br/>
+Return - The ft_fprintf() function returns the amount of characters printed.<br/>
 
 ```
 int				get_next_line(int fd, char **line);

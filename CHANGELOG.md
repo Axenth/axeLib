@@ -1,3 +1,7 @@
+## V3.0.6
+* Updated README.md
+* deleted main.c
+
 ## V3.0.5
 * Updated Codam headers
 * Added ft_fprintf
