@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 15:39:19 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char					*get_str(struct s_info info, void *temp)
 	else if (info.format_type == 8 && temp != NULL)
 		str = flag_procent();
 	else
-		str = ft_strdup_util("");
+		str = ft_strdup("");
 	return (str);
 }
 
@@ -90,11 +90,11 @@ struct s_handler_info	handle_second_nulls(struct s_info info, char *str)
 {
 	struct s_handler_info hi;
 
-	if (ft_strncmp_util(str, "", 1) == 0)
+	if (ft_strncmp(str, "", 1) == 0)
 		free(str);
-	str = ft_strdup_util("(null)");
+	str = ft_strdup("(null)");
 	if (info.precision_flag == e_false)
-		info.toprint = ft_strlen_util(str);
+		info.toprint = ft_strlen(str);
 	hi.info = info;
 	hi.str = str;
 	return (hi);

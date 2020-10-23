@@ -6,14 +6,14 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/20 19:17:00 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/01/10 16:58:34 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hdrs/ft_printf.h"
 #include <unistd.h>
 
-struct s_info	ft_putchar_fd_util(int fd, char c, struct s_info info)
+struct s_info	ft_putchar_fd(int fd, char c, struct s_info info)
 {
 	ssize_t i;
 

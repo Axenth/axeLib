@@ -1,3 +1,7 @@
+## V3.0.5
+* Updated Codam headers
+* Added ft_fprintf
+
 ## V3.0.4
 * Added ft_strcontains.
 

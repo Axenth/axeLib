@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/20 16:39:52 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/10/23 19:32:57 by axenth        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 t_bool					check_zero_flag(struct s_info info)
 {
-	if (info.format_type >= 1 || info.format_type <= 3 || info.format_type == 8)
+	if ((info.format_type >= 1 && info.format_type <= 3)
+		|| info.format_type == 8)
 		return (e_true);
 	if ((info.format_type >= 4 && info.format_type <= 7) &&
 												info.precision_flag == e_false)
@@ -36,7 +37,7 @@ static struct s_info	handle_functions(struct s_info info, char *str,
 	width_true(info, str, 0);
 	if (info.negative_flag == e_true)
 	{
-		info = ft_putchar_fd_util(1, '-', info);
+		info = ft_putchar_fd(info.fd, '-', info);
 		info.amount += 1;
 	}
 	width_zero_true(info, str, 0);

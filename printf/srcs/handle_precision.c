@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/03 17:25:02 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ static struct s_prec_data	while_string_is_dot(struct s_prec_data prec_data)
 		prec_data.start = prec_data.position;
 	while (!in_set(prec_data.string[prec_data.position]))
 		prec_data.position++;
-	prec_data.s = ft_substr_util(prec_data.string, prec_data.start,
+	prec_data.s = ft_substr(prec_data.string, prec_data.start,
 										prec_data.position - prec_data.start);
 	if (prec_data.s != NULL)
 	{
-		prec_data.prec_value = ft_atoi_util(prec_data.s);
+		prec_data.prec_value = ft_atoi(prec_data.s);
 		free(prec_data.s);
 	}
 	if (prec_data.prec_value == 0)

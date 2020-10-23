@@ -4,6 +4,14 @@ usage: <br/>
 
 `ft_printf("Format", ...)` <br />
 
+### ft_fprintf
+
+usage: <br />
+
+`ft_fprintf(1, "Format", ...)` <br/>
+
+The first value given is the file descriptor to write to.
+
 ### Format
 
 The format can handle the following conversions: <br />

@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/07 20:33:19 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/10/23 19:30:13 by axenth        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 static void	print_width(struct s_info info, char *str, int type, int i)
 {
-	while (i < ((info.width - ft_strlen_util(str)) +
-				(ft_strlen_util(str) - info.toprint)) && type == 0)
+	while (i < ((info.width - ft_strlen(str)) +
+				(ft_strlen(str) - info.toprint)) && type == 0)
 	{
-		info = ft_putchar_fd_util(1, ' ', info);
+		info = ft_putchar_fd(info.fd, ' ', info);
 		i++;
 	}
-	while (i < ((info.width - ft_strlen_util(str)) +
-				(ft_strlen_util(str) - info.toprint)) && type == 1)
+	while (i < ((info.width - ft_strlen(str)) +
+				(ft_strlen(str) - info.toprint)) && type == 1)
 	{
-		info = ft_putchar_fd_util(1, '0', info);
+		info = ft_putchar_fd(info.fd, '0', info);
 		i++;
 	}
 	while (i < (info.width - info.toprint) && type == 2)
 	{
-		info = ft_putchar_fd_util(1, ' ', info);
+		info = ft_putchar_fd(info.fd, ' ', info);
 		i++;
 	}
 	while (info.width == info.toprint &&
-				i < info.width - ft_strlen_util(str) && type == 3)
+				i < info.width - ft_strlen(str) && type == 3)
 	{
-		info = ft_putchar_fd_util(1, ' ', info);
+		info = ft_putchar_fd(info.fd, ' ', info);
 		i++;
 	}
 }
@@ -49,7 +49,7 @@ void		width_true(struct s_info info, char *str, int i)
 		{
 			if (info.print == e_true)
 			{
-				if (ft_strlen_util(str) - info.toprint < 0)
+				if (ft_strlen(str) - info.toprint < 0)
 					print_width(info, str, 2, i);
 				else
 				{
@@ -61,7 +61,7 @@ void		width_true(struct s_info info, char *str, int i)
 			{
 				while (i < info.width)
 				{
-					info = ft_putchar_fd_util(1, ' ', info);
+					info = ft_putchar_fd(info.fd, ' ', info);
 					i++;
 				}
 			}
@@ -84,7 +84,7 @@ void		width_zero_true(struct s_info info, char *str, int i)
 			{
 				while (i < info.width)
 				{
-					info = ft_putchar_fd_util(1, '0', info);
+					info = ft_putchar_fd(info.fd, '0', info);
 					i++;
 				}
 			}
@@ -98,11 +98,11 @@ void		width_dash_true(struct s_info info, char *str, int i)
 	{
 		if (info.print == e_true)
 		{
-			if (ft_strlen_util(str) - info.toprint < 0)
+			if (ft_strlen(str) - info.toprint < 0)
 			{
 				while (i < (info.width - info.toprint))
 				{
-					info = ft_putchar_fd_util(1, ' ', info);
+					info = ft_putchar_fd(info.fd, ' ', info);
 					i++;
 				}
 			}
@@ -113,7 +113,7 @@ void		width_dash_true(struct s_info info, char *str, int i)
 		{
 			while (i < info.width)
 			{
-				info = ft_putchar_fd_util(1, ' ', info);
+				info = ft_putchar_fd(info.fd, ' ', info);
 				i++;
 			}
 		}

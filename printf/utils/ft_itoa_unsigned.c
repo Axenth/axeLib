@@ -6,7 +6,7 @@
 /*   By: jlensing <jlensing@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/02 14:09:27 by jlensing      #+#    #+#                 */
-/*   Updated: 2020/04/06 19:10:26 by jlensing      ########   odam.nl         */
+/*   Updated: 2020/01/14 14:35:27 by jlensing      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int		count_amount(unsigned int temp)
 static char		*check_value(unsigned int n)
 {
 	if (n == 0 || n == -0)
-		return (ft_strdup_util("0"));
+		return (ft_strdup("0"));
 	return (NULL);
 }
 
@@ -53,7 +53,7 @@ static char		*calc_result(long n, unsigned int amount)
 	return (result);
 }
 
-char			*ft_itoa_util_unsigned_util(unsigned int n)
+char			*ft_itoa_unsigned(unsigned int n)
 {
 	char				*result;
 	unsigned int		amount;
