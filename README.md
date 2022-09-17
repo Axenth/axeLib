@@ -1,4 +1,4 @@
-# AxeLib  [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/jlensing/Libft)](https://github.com/JaeSeoKim/badge42)
+# AxeLib  [![jlensing's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1jwurq1001109l1q4s085aw/project/1610465)](https://github.com/JaeSeoKim/badge42)
 
 A simple library I use during the 42 program at CODAM
 
